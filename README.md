@@ -11,3 +11,6 @@
 ```Tell You your Future (Random)```                                                                                                        
 ```Tell you what time it is```                                                                                                        
 ```More Features maybe later ...```                                                                                                        
+
+### Note
+I Will Be Making Another Branch Translated into Czech
