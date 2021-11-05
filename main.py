@@ -16,7 +16,7 @@ def rpc():
     RPC = Presence(client_id=client_id)
     RPC.connect()
     start_time=time.time()
-    RPC.update(large_image="logo",large_text="The Gentleman it self" ,details = "Im Using The Gentleman", state='Join me by pressing: "Start Too"' ,buttons=[{"label": "Start Too", "url": "https://github.com/mrpekr/thegentleman"}], start=start_time)
+    RPC.update(large_image="logo",large_text="The Gentleman it self" ,small_image="pfp" ,small_text="Created By: Mr. Pekr | mrpekr.github.io" ,details = "Im Using The Gentleman", state="He is a small Chatbot" ,buttons=[{"label": "Gentleman's GitHub Repo", "url": "https://github.com/mrpekr/thegentleman"}, {"label": "Gentleman's Creator", "url": "https://mrpekr.github.io"}], start=start_time)
 
 def Menu():  
     if richpresence == True:
