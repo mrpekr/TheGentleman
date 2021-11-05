@@ -1,13 +1,25 @@
+from os import replace
 import random
 from datetime import datetime
+from pypresence import Presence
+import time
 
 clearConsole = lambda: print('\n' * 150)
 
 #Config:
-richpresence = False #COMING SOON | Default: False (Shows That you are using "The Gengleman" as you discord activity)
+richpresence = True #Default: True (Shows That you are using "The Gengleman" as you discord activity)
 customsalutation = False#COMING SOON | Default: False ("The Gentleman" will be calling you by custom name)
 
+def rpc():
+    client_id = "906113842969460746"
+    RPC = Presence(client_id=client_id)
+    RPC.connect()
+    start_time=time.time()
+    RPC.update(large_image="logo",large_text="The Gentleman osobně" ,small_image="pfp",small_text="Vytvořil: Mr. Pekr | mrpekr.github.io" ,details = "Používám The Gentleman", state='Je jednoduchý Chatbot' , buttons=[{"label": "Gentlemanovo GitHub Repo", "url": "https://github.com/mrpekr/thegentleman"}, {"label": "Gentlemanovo Tvůrce", "url": "https://mrpekr.github.io"}], start=start_time)
+
 def Menu():
+    if richpresence == True:
+        rpc()
     print("\x1b[38;5;220m")    
     print("==============================================================================================")
     print("=        ==  ==================      =======================  ================================")
@@ -21,14 +33,14 @@ def Menu():
     print("====  =====  =  ===   =========      ====   ===  =  ===   ==  ===   ===  =  =  ===    ==  =  =")
     print("==============================================================================================")
     print(" ")
-    print('Created By: Mr. Pekr | https://mrpekr.github.io ')
+    print('Vytvořil: Mr. Pekr | https://mrpekr.github.io ')
     print("\x1b[38;5;255m")
-    print("What can i do for You?")
-    print("\x1b[38;5;199m[1] Tell me a Joke")
-    print("[2] Tell me my Future")
-    print("[3] Tell me what time it is")
-    print("[4] Tell me why we still here ... Just to suffer")
-    menu = input("\x1b[38;5;85mEnter Number: ")
+    print("Co pro tebe můžu udělat?")
+    print("\x1b[38;5;199m[1] Řekni mi vtip (Bez Překladu)")
+    print("[2] Řekni mi mou budoucnost (Bez Překladu)")
+    print("[3] Řekni mi kolik je hodin")
+    print("[4] Tady Nic Není")
+    menu = input("\x1b[38;5;85mZadej Čáslo: ")
     print("\x1b[38;5;255m")
     if menu == "1":
         def Joke():
@@ -44,18 +56,18 @@ def Menu():
                 "How do you drown a hipster? Throw him in the mainstream.",
                 "What did the Buddhist say to the hot dog vendor? Make me one with everything."
             ]
-            print("Sure Here: \x1b[38;5;158m" + random.choice(jokes))
+            print("Tady to máš: \x1b[38;5;158m" + random.choice(jokes))
             print("\x1b[38;5;15m")
-            joke = input("Do You Want Another Joke? [Yes / No]: ")
-            if joke == "Yes":
+            joke = input("Chceš Další Vtip? [Ano / Ne]: ")
+            if joke == "Ano":
                 clearConsole()
                 print(Joke())
-            elif joke == "No":
+            elif joke == "Ne":
                 clearConsole()
                 print(Menu())
             else:
                 clearConsole() 
-                print("Invalid Input!")
+                print("Neplatná Volba")
                 Joke()          
         Joke()
     elif menu == "2":
@@ -71,25 +83,25 @@ def Menu():
             ]
             print("My Powers Tell Me That ...: \x1b[38;5;158m" + random.choice(futures))
             print("\x1b[38;5;15m")
-            future = input("Do You Want To Try Again? [Yes / No]: ")
+            future = input("Do You Want To Try Again? [Ano / Ne]: ")
 
-            if future == "Yes":
+            if future == "Ano":
                 clearConsole()
                 print(Future())
 
-            if future == "No":
+            if future == "Ne":
                 clearConsole()
                 print(Menu())
         Future()
     elif menu == "3":
         def Time():
-            print("Current Time Is: " + datetime.now().strftime('%H:%M:%S'))
-            back = input("Do You want back to main menu? [Yes / No]: ")
-            if back == "Yes":
+            print("Aktuálně je: " + datetime.now().strftime('%H:%M:%S'))
+            back = input("Cheš zpátky do Menu? [Ano / Ne]: ")
+            if back == "Ano":
                 clearConsole()
                 print(Menu())
 
-            if back == "No":
+            if back == "Ne":
                 clearConsole()
                 print(Time())
         Time()
@@ -97,20 +109,20 @@ def Menu():
         def placeholder():
             print("You Have Selected A Place Holder")
             print("You Stupid")
-            back = input("Return To Menu? [Yes / No]: ")
-            if back == "Yes":
+            back = input("Return To Menu? [Ano / Ne]: ")
+            if back == "Ano":
                 clearConsole()
                 print(Menu())
-            elif back == "No":
+            elif back == "Ne":
                 clearConsole()
                 print(placeholder())
             else:
                 clearConsole()
-                print("Invalid Input")
+                print("Neplatná Volba")
                 print(placeholder())
         placeholder()
     else:
         clearConsole()
-        print("Invalid input!")
+        print("Neplatná Volba")
         print(Menu())
 Menu()
