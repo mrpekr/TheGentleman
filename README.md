@@ -10,7 +10,7 @@
 Gentleman ještě není plně přeložen do češtiny a česká branch bude dostávat aktualizace až po "main"
 
 ## Funkce
-```ˇŘíct Náhodnej Vtip```                                                                                                         
+```Říct Náhodnej Vtip```                                                                                                         
 ```Předpovědět Budoucnost (Náhodné)```                                                                                                        
 ```Říct kolik je hodin```                                                                                                        
 ```Více funkcí možná v budoucnu```                                                                                                        
