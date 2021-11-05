@@ -13,4 +13,6 @@
 ```More Features maybe later ...```                                                                                                        
 
 ### Note
-I Will Be Making Another Branch Translated into Czech
+Added Czech Branch [Here][cb] but this one will have all new things first
+
+[cb]: https://github.com/mrpekr/TheGentleman/tree/czech
