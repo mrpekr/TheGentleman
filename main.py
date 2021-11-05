@@ -3,6 +3,10 @@ from datetime import datetime
 
 clearConsole = lambda: print('\n' * 150)
 
+#Config:
+richpresence = False #COMING SOON | Default: False (Shows That you are using "The Gengleman" as you discord activity)
+customsalutation = False#COMING SOON | Default: False ("The Gentleman" will be calling you by custom name)
+
 def Menu():
     print("\x1b[38;5;220m")    
     print("==============================================================================================")
