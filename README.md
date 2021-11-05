@@ -4,13 +4,13 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/mrpekr/thegentleman)
 
 # TheGentleman
- Gentleman is a realy simple app mady with python i did it in 1-3 hours i might add new features and edit the code a bit.
+ Gentleman je velice jednoduchej chatbot v konzoly. trval mi cca. 1-3 hodiny
  
-## Features
-```Tell A Random Joke```                                                                                                         
-```Tell You your Future (Random)```                                                                                                        
-```Tell you what time it is```                                                                                                        
-```More Features maybe later ...```                                                                                                        
+## Poznámka
+Gentleman ještě není plně přeložen do češtiny a česká branch bude dostávat aktualizace až po "main"
 
-### Note
-I Will Be Making Another Branch Translated into Czech
+## Funkce
+```ˇŘíct Náhodnej Vtip```                                                                                                         
+```Předpovědět Budoucnost (Náhodné)```                                                                                                        
+```Říct kolik je hodin```                                                                                                        
+```Více funkcí možná v budoucnu```                                                                                                        
