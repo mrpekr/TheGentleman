@@ -1,13 +1,26 @@
+from os import replace
 import random
 from datetime import datetime
+from pypresence import Presence
+import time
+import base64
 
 clearConsole = lambda: print('\n' * 150)
 
 #Config:
-richpresence = False #COMING SOON | Default: False (Shows That you are using "The Gengleman" as you discord activity)
+richpresence = True #Default: True (Shows That you are using "The Gengleman" as you discord activity)
 customsalutation = False#COMING SOON | Default: False ("The Gentleman" will be calling you by custom name)
 
-def Menu():
+def rpc():
+    client_id = "906113842969460746"
+    RPC = Presence(client_id=client_id)
+    RPC.connect()
+    start_time=time.time()
+    RPC.update(large_image="logo",large_text="The Gentleman it self" ,details = "Im Using The Gentleman", state='Join me by pressing: "Start Too"' ,buttons=[{"label": "Start Too", "url": "https://github.com/mrpekr/thegentleman"}], start=start_time)
+
+def Menu():  
+    if richpresence == True:
+        rpc()
     print("\x1b[38;5;220m")    
     print("==============================================================================================")
     print("=        ==  ==================      =======================  ================================")
