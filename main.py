@@ -11,7 +11,7 @@ clearConsole = lambda: print('\n' * 150)
 
 #Config:
 richpresence = True #Default: True (Shows That you are using "The Gengleman" as you discord activity)
-customsalutation = False #Default: False ("The Gentleman" will be calling you by custom name)
+customsalutation = True #Default: False ("The Gentleman" will be calling you by custom name)
 
 def rpc():
     client_id = "906113842969460746"
@@ -159,7 +159,7 @@ else:
                 print("\x1b[38;5;199m[1] Tell me a Joke")
                 print("[2] Tell me my Future")
                 print("[3] Tell me what time it is")
-                print("[4] Tell me why is there 4 if there is no 4 option")
+                print("[4] I Want To Change my Name")
                 menu = input("\x1b[38;5;85mEnter Number: ")
                 print("\x1b[38;5;255m")
                 if menu == "1":
@@ -226,21 +226,22 @@ else:
                             print(Time())
                     Time()
                 elif menu == "4":
-                    def placeholder():
-                        print("You Have Selected A Place Holder")
-                        print("You Stupid")
-                        back = input("Return To Menu? [Yes / No]: ")
-                        if back == "Yes":
+                    def namechange():
+                        print("You Selected Name Change.")
+                        print("Are you sure you want to change your name.")
+                        namereset = input("Change Name? [Yes / No]: ")
+                        if namereset == "Yes":
+                            f.close()
+                            os.remove("data")
+                            os.execv(sys.executable, ["python"] + sys.argv)
+                        elif namereset == "No":
                             clearConsole()
                             print(MenuN())
-                        elif back == "No":
-                            clearConsole()
-                            print(placeholder())
                         else:
                             clearConsole()
                             print("Invalid Input")
-                            print(placeholder())
-                    placeholder()
+                            print(namechange())
+                    namechange()
                 else:
                     clearConsole()
                     print("Invalid input!")
