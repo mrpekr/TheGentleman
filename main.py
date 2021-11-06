@@ -245,7 +245,7 @@ else:
                 else:
                     clearConsole()
                     print("Neplatná Volba")
-                    print(Menu())
+                    print(MenuN())
             MenuN()
     else:
         print("Ahoj Já Jsem Gentleman. Tebe Neznám... Budu potřebovat tvoje jméno")
