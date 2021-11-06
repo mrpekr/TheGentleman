@@ -11,7 +11,7 @@ clearConsole = lambda: print('\n' * 150)
 
 #Config:
 richpresence = True #Default: True (Shows That you are using "The Gengleman" as you discord activity)
-customsalutation = True #Default: False ("The Gentleman" will be calling you by custom name)
+customsalutation = False #Default: False ("The Gentleman" will be calling you by custom name)
 
 def rpc():
     client_id = "906113842969460746"
@@ -43,6 +43,7 @@ def Menu():
     print("[2] Tell me my Future")
     print("[3] Tell me what time it is")
     print("[4] Tell me why we still here ... Just to suffer")
+    print("[5] Enter Secret Code (DO NOT ENTER)")
     menu = input("\x1b[38;5;85mEnter Number: ")
     print("\x1b[38;5;255m")
     if menu == "1":
@@ -109,21 +110,41 @@ def Menu():
                 print(Time())
         Time()
     elif menu == "4":
-        def placeholder():
-            print("You Have Selected A Place Holder")
-            print("You Stupid")
-            back = input("Return To Menu? [Yes / No]: ")
-            if back == "Yes":
+            def namechange():
+                print("You Selected Name Change.")
+                print("Are you sure you want to change your name.")
+                namereset = input("Change Name? [Yes / No]: ")
+                if namereset == "Yes":
+                    f.close()
+                    os.remove("data")
+                    os.execv(sys.executable, ["python"] + sys.argv)
+                elif namereset == "No":
+                        clearConsole()
+                        print(MenuN())
+                else:
+                    clearConsole()
+                    print("Invalid Input") 
+                    print(namechange())
+                    namechange()
+    elif menu == "5":
+        def secret():
+            print("Sorry but you are not allowed to access this")
+            print("To enter you need a version witch you don't have'")
+            secretr = input("Please Return To Main Menu. [Yes / No]: ")
+            if secretr == "Yes":
                 clearConsole()
                 print(Menu())
-            elif back == "No":
+            elif secretr == "No":
                 clearConsole()
-                print(placeholder())
-            else:
-                clearConsole()
-                print("Invalid Input")
-                print(placeholder())
-        placeholder()
+                print("Invalid Choice No is Not An option")
+                print("You will be redicted back in 5 seconds.")
+                time.sleep(5)
+                pill = input("So what do you choose? [Red Pill / Blue Pill]:")
+                if pill == "Red Pill":
+                    print("I sad you DO NOT HAVE ACCES TO HERE")
+                    time.sleep(3)
+                    os.execv(sys.executable, ['python'] + sys.argv)
+        secret()
     else:
         clearConsole()
         print("Invalid input!")
