@@ -42,7 +42,6 @@ def Menu():
     print("\x1b[38;5;199m[1] Řekni mi vtip (Bez Překladu)")
     print("[2] Řekni mi mou budoucnost (Bez Překladu)")
     print("[3] Řekni mi kolik je hodin")
-    print("[4] Tady Nic Není")
     menu = input("\x1b[38;5;85mZadej Čáslo: ")
     print("\x1b[38;5;255m")
     if menu == "1":
@@ -108,26 +107,6 @@ def Menu():
                 clearConsole()
                 print(Time())
         Time()
-    elif menu == "4":
-        def placeholder():
-            print("You Have Selected A Place Holder")
-            print("You Stupid")
-            back = input("Return To Menu? [Ano / Ne]: ")
-            if back == "Ano":
-                clearConsole()
-                print(Menu())
-            elif back == "Ne":
-                clearConsole()
-                print(placeholder())
-            else:
-                clearConsole()
-                print("Neplatná Volba")
-                print(placeholder())
-        placeholder()
-    else:
-        clearConsole()
-        print("Neplatná Volba")
-        print(Menu())
 
 if customsalutation == False:
     Menu()
@@ -227,21 +206,22 @@ else:
                             print(Time())
                     Time()
                 elif menuN == "4":
-                    def placeholder():
-                        print("You Have Selected A Place Holder")
-                        print("You Stupid")
-                        back = input("Return To Menu? [Ano / Ne]: ")
-                        if back == "Ano":
-                            clearConsole()
-                            print(MenuN())
-                        elif back == "Ne":
-                            clearConsole()
-                            print(placeholder())
+                    def namechange():
+                        print("Vybral jsi Změnu Jména")
+                        print("Jseš jsi jistej že si chceš změnit jméno?.")
+                        namereset = input("[Ano / Ne]: ")
+                        if namereset == "Ano":
+                            f.close()
+                            os.remove("data")
+                            os.execv(sys.executable, ["python"] + sys.argv)
+                        elif namereset == "Ne":
+                                clearConsole()
+                                print(MenuN())
                         else:
                             clearConsole()
-                            print("Neplatná Volba")
-                            print(placeholder())
-                    placeholder()
+                            print("Neplatná Volba") 
+                            print(namechange())
+                            namechange()
                 else:
                     clearConsole()
                     print("Neplatná Volba")
