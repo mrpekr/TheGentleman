@@ -1,11 +1,11 @@
 from os import replace
 import random
 from datetime import datetime
-from pypresence import Presence
 import time
 from os.path import exists
 import sys
 import os
+from pypresence import Presence
 
 clearConsole = lambda: print('\n' * 150)
 
